@@ -27,7 +27,61 @@ Final state of router 198.71.243.61 table:
 Приведите скрин или лог работы программы.
 
 #### Демонстрация работы
-todo
+```sh
+PS C:\Users\serzh\OneDrive\Рабочий стол\net\networks-course\lab12\src\rip> python rip.py net.json   
+Simulation
+0 -> 1
+0 -> 2
+0 -> 3
+0 -> 4
+1 -> 0
+1 -> 2
+2 -> 0
+2 -> 1
+2 -> 3
+3 -> 0
+3 -> 2
+4 -> 0
+4 -> 5
+5 -> 4
+Final
+src=0
+dst=1 next=1 cost=1
+dst=2 next=2 cost=1
+dst=3 next=3 cost=1
+dst=4 next=4 cost=1
+dst=5 next=4 cost=2
+src=1
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=3 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=2
+dst=0 next=0 cost=1
+dst=1 next=1 cost=1
+dst=3 next=3 cost=1
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=3
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=1 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=4
+dst=0 next=0 cost=1
+dst=5 next=5 cost=1
+dst=1 next=0 cost=2
+dst=2 next=0 cost=2
+dst=3 next=0 cost=2
+src=5
+dst=4 next=4 cost=1
+dst=0 next=4 cost=2
+dst=1 next=4 cost=3
+dst=2 next=4 cost=3
+dst=3 next=4 cost=3
+```
 
 ### Задание Б (1 балл)
 Выведите на консоль промежуточные этапы работы протокола: по каждому маршрутизатору
@@ -43,7 +97,149 @@ Simulation step 3 of router 42.162.54.248
 ```
 
 #### Демонстрация работы
-todo
+```sh
+Simulation
+0 -> 1
+0 -> 2
+0 -> 3
+0 -> 4
+1 -> 0
+1 -> 2
+2 -> 0
+2 -> 1
+2 -> 3
+3 -> 0
+3 -> 2
+4 -> 0
+4 -> 5
+5 -> 4
+Step 1
+src=0
+dst=1 next=1 cost=1
+dst=2 next=2 cost=1
+dst=3 next=3 cost=1
+dst=4 next=4 cost=1
+src=1
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+src=2
+dst=0 next=0 cost=1
+dst=1 next=1 cost=1
+dst=3 next=3 cost=1
+src=3
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+src=4
+dst=0 next=0 cost=1
+dst=5 next=5 cost=1
+src=5
+dst=4 next=4 cost=1
+Step 2
+src=0
+dst=1 next=1 cost=1
+dst=2 next=2 cost=1
+dst=3 next=3 cost=1
+dst=4 next=4 cost=1
+dst=5 next=4 cost=2
+src=1
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=3 next=0 cost=2
+dst=4 next=0 cost=2
+src=2
+dst=0 next=0 cost=1
+dst=1 next=1 cost=1
+dst=3 next=3 cost=1
+dst=4 next=0 cost=2
+src=3
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=1 next=0 cost=2
+dst=4 next=0 cost=2
+src=4
+dst=0 next=0 cost=1
+dst=5 next=5 cost=1
+dst=1 next=0 cost=2
+dst=2 next=0 cost=2
+dst=3 next=0 cost=2
+src=5
+dst=4 next=4 cost=1
+dst=0 next=4 cost=2
+Step 3
+src=0
+dst=1 next=1 cost=1
+dst=2 next=2 cost=1
+dst=3 next=3 cost=1
+dst=4 next=4 cost=1
+dst=5 next=4 cost=2
+src=1
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=3 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=2
+dst=0 next=0 cost=1
+dst=1 next=1 cost=1
+dst=3 next=3 cost=1
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=3
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=1 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=4
+dst=0 next=0 cost=1
+dst=5 next=5 cost=1
+dst=1 next=0 cost=2
+dst=2 next=0 cost=2
+dst=3 next=0 cost=2
+src=5
+dst=4 next=4 cost=1
+dst=0 next=4 cost=2
+dst=1 next=4 cost=3
+dst=2 next=4 cost=3
+dst=3 next=4 cost=3
+Final
+src=0
+dst=1 next=1 cost=1
+dst=2 next=2 cost=1
+dst=3 next=3 cost=1
+dst=4 next=4 cost=1
+dst=5 next=4 cost=2
+src=1
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=3 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=2
+dst=0 next=0 cost=1
+dst=1 next=1 cost=1
+dst=3 next=3 cost=1
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=3
+dst=0 next=0 cost=1
+dst=2 next=2 cost=1
+dst=1 next=0 cost=2
+dst=4 next=0 cost=2
+dst=5 next=0 cost=3
+src=4
+dst=0 next=0 cost=1
+dst=5 next=5 cost=1
+dst=1 next=0 cost=2
+dst=2 next=0 cost=2
+dst=3 next=0 cost=2
+src=5
+dst=4 next=4 cost=1
+dst=0 next=4 cost=2
+dst=1 next=4 cost=3
+dst=2 next=4 cost=3
+dst=3 next=4 cost=3
+```
 
 ### Задание В (2 балла)
 
@@ -70,7 +266,7 @@ UDP, а также выводит количество потерянных па
 <img src="images/tcp.png" width=700 />
 
 #### Демонстрация работы
-todo
+![alt text](images/image.png)
 
 ### 2. Измерение по протоколу UDP (3 балла)
 Пример интерфейса:
@@ -78,7 +274,7 @@ todo
 <img src="images/udp.png" width=700 />
 
 #### Демонстрация работы
-todo
+![alt text](images/image-1.png)
    
 
 ## Транслятор портов (6 баллов)
